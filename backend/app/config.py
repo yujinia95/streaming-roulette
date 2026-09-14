@@ -16,6 +16,6 @@ class Config:
         COUNTER_KEY: Key (counter name) used on the free hit-counter API.
     """
     TMDB_API_KEY          = os.environ.get("TMDB_API_KEY", "")
-    FRONTEND_ORIGIN_LOCAL = os.environ.get("FRONTEND_ORIGIN_LOCAL", "*")
+    FRONTEND_ORIGIN       = os.environ.get("FRONTEND_ORIGIN", "*")
     COUNTER_NAMESPACE     = os.environ["COUNTER_NAMESPACE"]
     COUNTER_KEY           = os.environ["COUNTER_KEY"]
