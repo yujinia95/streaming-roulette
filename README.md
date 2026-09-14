@@ -2,6 +2,8 @@
 
 A spinning wheel web app for deciding what to watch. Pick a streaming provider, country, content type, and genre, and the wheel picks from a small batch of real matching titles, pulled from [TMDB](https://www.themoviedb.org/).
 
+**Live**: https://streaming-roulette.netlify.app
+
 ## Stack
 
 - **Backend**: Flask (Python), proxies calls to the TMDB API
