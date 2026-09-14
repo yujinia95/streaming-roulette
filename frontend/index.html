@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Streaming Roulette</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <h1>Streaming Roulette</h1>
+      <p class="tagline">Can't decide what to watch? Spin the wheel.</p>
+    </header>
+
+    <section class="filters" aria-label="Filters">
+      <label class="switch-row">
+        <span>Movie</span>
+        <input type="checkbox" id="media-type-switch" class="switch" />
+        <span>TV Show</span>
+      </label>
+
+      <label class="field">
+        <span>Provider</span>
+        <select id="provider-select"></select>
+      </label>
+
+      <label class="field">
+        <span>Streaming Region</span>
+        <select id="country-select"></select>
+      </label>
+
+      <label class="field">
+        <span>Genre</span>
+        <select id="genre-select">
+          <option value="" selected disabled>Select genre</option>
+        </select>
+      </label>
+
+      <div class="filter-actions">
+        <button id="reset-btn" class="secondary">Reset Filters</button>
+      </div>
+    </section>
+
+    <section id="wheel-area" class="wheel-area" hidden>
+      <div class="wheel-wrap">
+        <div class="pointer" aria-hidden="true"></div>
+        <canvas id="wheel-canvas" width="420" height="420"></canvas>
+        <button id="center-spin-btn" class="center-spin-btn">Spin the Wheel</button>
+      </div>
+      <p id="low-results-hint" class="hint" hidden>
+        Not many matches for this combo. Please try a different genre or country.
+      </p>
+    </section>
+
+    <footer class="page-footer">
+      <span id="spin-count"></span>
+      <p class="attribution">
+        This website uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB.
+      </p>
+    </footer>
+  </main>
+
+  <div id="result-modal" class="modal" hidden>
+    <div class="modal-content">
+      <button id="modal-close-btn" class="icon-btn" aria-label="Close">✕</button>
+      <img id="result-poster" alt="" />
+      <div class="modal-details">
+        <h2 id="result-title"></h2>
+        <p id="result-meta" class="meta"></p>
+        <p id="result-overview"></p>
+        <button id="modal-reroll-btn" class="secondary">Spin Again</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="feedback-fab" class="fab" aria-label="Send feedback">💬</button>
+
+  <div id="feedback-modal" class="modal" hidden>
+    <div class="modal-content feedback-content">
+      <button id="feedback-close-btn" class="icon-btn" aria-label="Close">✕</button>
+      <h2>Got feedback?</h2>
+      <textarea id="feedback-textarea" rows="4" placeholder="Tell us what you think..."></textarea>
+      <input type="text" id="feedback-honeypot" class="honeypot" tabindex="-1" autocomplete="off" />
+      <button id="feedback-send-btn">Send</button>
+      <p id="feedback-status" class="hint"></p>
+    </div>
+  </div>
+
+  <script src="https://www.google.com/recaptcha/api.js?render=6LfQyrotAAAAAIPjwOIvB2RM3O8_uBAm7FA1bOct"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
