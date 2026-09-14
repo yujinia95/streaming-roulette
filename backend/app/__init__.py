@@ -16,7 +16,7 @@ def create_app() -> Flask:
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    CORS(app, resources={r"/api/*": {"origins": app.config["FRONTEND_ORIGIN_LOCAL"]}})
+    CORS(app, resources={r"/api/*": {"origins": app.config["FRONTEND_ORIGIN"]}})
 
     app.register_blueprint(genres_bp)
     app.register_blueprint(wheel_bp)
