@@ -7,7 +7,7 @@ import { StatsDisplay } from "./components/StatsDisplay.js";
 import { COUNTRIES } from "./constants/countries.js";
 import { PROVIDERS } from "./constants/providers.js";
 
-const API_BASE = "http://127.0.0.1:5000";
+const API_BASE = "https://streaming-roulette-lqza.onrender.com";
 
 const apiClient = new ApiClient(API_BASE);
 
